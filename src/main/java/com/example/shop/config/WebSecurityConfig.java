@@ -57,7 +57,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.
                 authorizeRequests()
                 .antMatchers("/home").permitAll()
-                .antMatchers("/admin/trademarks").hasAuthority("ADMIN")
                 .and()
                 .exceptionHandling().accessDeniedPage("/403");
         http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
